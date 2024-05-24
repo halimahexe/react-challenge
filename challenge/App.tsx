@@ -1,4 +1,5 @@
 import Greeting from './Greeting.tsx';
+import Shouter from './Shouter.tsx';
 
 function App() {
 	return (
