@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 export default function MouseTracker() {
-	const [startPoint, setCoords] = useState([0, 0]);
+	const [startPoint, setCoords] = useState<[number, number]>([0, 0]);
 
 	useEffect(() => {
 		function updateCoords(event: MouseEvent) {
@@ -12,9 +12,10 @@ export default function MouseTracker() {
 		return () => window.removeEventListener('mousemove', updateCoords);
 	}, []);
 
+	const [x, y] = startPoint;
 	return (
 		<output>
-			{startPoint[0]},{startPoint[1]}
+			{x},{y}
 		</output>
 	);
 }
