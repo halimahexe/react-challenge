@@ -4,14 +4,13 @@ function Shouter() {
 	const [textInput, capText] = useState('');
 
 	function updateText(event: ChangeEvent<HTMLInputElement>) {
-		const capitalise: string = event.target.value.toUpperCase();
-		capText(capitalise);
+		capText(event.target.value);
 	}
 
 	return (
 		<form>
 			<input value={textInput} aria-label='text input' onChange={updateText} />
-			<output>{textInput}</output>
+			<output>{textInput.toUpperCase()}</output>
 		</form>
 	);
 }
