@@ -6,9 +6,7 @@ export default function MouseTracker() {
 	useEffect(() => {
 		function updateCoords(event: MouseEvent) {
 			event.preventDefault();
-			const x: number = event.clientX;
-			const y: number = event.clientY;
-			setCoords([x, y]);
+			setCoords([event.clientX, event.clientY]);
 		}
 		window.addEventListener('mousemove', updateCoords);
 		return () => window.removeEventListener('mousemove', updateCoords);
